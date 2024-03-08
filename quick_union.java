@@ -14,6 +14,7 @@ public class quick_union
 
     private int root(int i){
         while (i!=id[i]) {
+            id[i] = id[id[i]];  //KEEPS ALMOST FLAT TREE
             i = id[i];
         }
         return i;
@@ -35,6 +36,6 @@ public class quick_union
         quick_union obj = new quick_union(10);
         obj.union(1, 2);
         obj.union(1, 4);
-        System.out.println(obj.connected(2, 3));
+        System.out.println(obj.connected(2, 4));
     }
 }
